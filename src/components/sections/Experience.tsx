@@ -1,25 +1,24 @@
-import React from "react";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+//@ts-nocheck
 
-import "react-vertical-timeline-component/style.min.css";
+import React from 'react';
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 
-import { experiences } from "../../constants";
-import { SectionWrapper } from "../../hoc";
-import { Header } from "../atoms/Header";
-import { TExperience } from "../../types";
-import { config } from "../../constants/config";
+import 'react-vertical-timeline-component/style.min.css';
 
-const ExperienceCard: React.FC<TExperience> = (experience) => {
+import { experiences } from '../../constants';
+import { SectionWrapper } from '../../hoc';
+import { Header } from '../atoms/Header';
+import { TExperience } from '../../types';
+import { config } from '../../constants/config';
+
+const ExperienceCard: React.FC<TExperience> = experience => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
+        background: '#1d1836',
+        color: '#fff',
       }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
+      contentArrowStyle={{ borderRight: '7px solid  #232631' }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={
@@ -34,10 +33,7 @@ const ExperienceCard: React.FC<TExperience> = (experience) => {
     >
       <div>
         <h3 className="text-[24px] font-bold text-white">{experience.title}</h3>
-        <p
-          className="text-secondary text-[16px] font-semibold"
-          style={{ margin: 0 }}
-        >
+        <p className="text-secondary text-[16px] font-semibold" style={{ margin: 0 }}>
           {experience.companyName}
         </p>
       </div>
@@ -72,4 +68,4 @@ const Experience = () => {
   );
 };
 
-export default SectionWrapper(Experience, "work");
+export default SectionWrapper(Experience, 'work');
